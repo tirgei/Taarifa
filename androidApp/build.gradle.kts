@@ -1,17 +1,17 @@
 plugins {
-    id("com.android.application")
-    kotlin("android")
+    id(Plugins.Android.application)
+    kotlin(Plugins.Kotlin.android)
 }
 
 android {
-    namespace = "com.tirgei.taarifa.android"
+    namespace = "${Config.Android.id}.android"
     compileSdk = 33
     defaultConfig {
-        applicationId = "com.tirgei.taarifa.android"
-        minSdk = 21
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = Config.Android.id
+        minSdk = Config.Android.minSdk
+        targetSdk = Config.Android.targetSdk
+        versionCode = Config.Android.versionCode
+        versionName = Config.Android.versionName
     }
     buildFeatures {
         compose = true
@@ -25,7 +25,7 @@ android {
         }
     }
     buildTypes {
-        getByName("release") {
+        getByName(Config.BuildTypes.release) {
             isMinifyEnabled = false
         }
     }
@@ -40,10 +40,10 @@ android {
 
 dependencies {
     implementation(project(":shared"))
-    implementation("androidx.compose.ui:ui:1.4.3")
-    implementation("androidx.compose.ui:ui-tooling:1.4.3")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.4.3")
-    implementation("androidx.compose.foundation:foundation:1.4.3")
-    implementation("androidx.compose.material:material:1.4.3")
-    implementation("androidx.activity:activity-compose:1.7.1")
+    implementation(Libs.AndroidX.Compose.ui)
+    implementation(Libs.AndroidX.Compose.uiTooling)
+    implementation(Libs.AndroidX.Compose.uiToolingPreview)
+    implementation(Libs.AndroidX.Compose.foundation)
+    implementation(Libs.AndroidX.Compose.material)
+    implementation(Libs.AndroidX.Activity.activity)
 }

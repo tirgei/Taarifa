@@ -1,6 +1,6 @@
 plugins {
-    kotlin("multiplatform")
-    id("com.android.library")
+    kotlin(Plugins.Kotlin.multiplatform)
+    id(Plugins.Android.library)
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -40,9 +40,9 @@ kotlin {
 }
 
 android {
-    namespace = "com.tirgei.taarifa"
-    compileSdk = 33
+    namespace = Config.Android.id
+    compileSdk = Config.Android.compileSdk
     defaultConfig {
-        minSdk = 21
+        minSdk = Config.Android.minSdk
     }
 }
