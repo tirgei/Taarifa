@@ -21,6 +21,7 @@ object Libs {
             val uiToolingPreview = "androidx.compose.ui:ui-tooling-preview:${Lib.COMPOSE.version}"
             val foundation = "androidx.compose.foundation:foundation:${Lib.COMPOSE.version}"
             val material = "androidx.compose.material3:material3:${Lib.MATERIAL_3.version}"
+            val googleFonts = "androidx.compose.ui:ui-text-google-fonts:${Lib.COMPOSE.version}"
         }
     }
 
@@ -28,7 +29,6 @@ object Libs {
         object Dagger {
             val hilt = "com.google.dagger:hilt-android:${Lib.DAGGER_HILT.version}"
             val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:${Lib.DAGGER_HILT.version}"
-            val hiltCompiler = "androidx.hilt:hilt-compiler:${Lib.DAGGER_HILT.version}"
             val hiltNavigation = "androidx.hilt:hilt-navigation-compose:${Lib.HILT_NAVIGATION.version}"
         }
     }

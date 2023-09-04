@@ -10,7 +10,7 @@ kotlin {
     android {
         compilations.all {
             kotlinOptions {
-                jvmTarget = "1.8"
+                jvmTarget = "17"
             }
         }
     }
@@ -44,5 +44,10 @@ android {
     compileSdk = Config.Android.compileSdk
     defaultConfig {
         minSdk = Config.Android.minSdk
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
