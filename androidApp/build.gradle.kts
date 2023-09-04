@@ -1,10 +1,13 @@
 plugins {
     id(Plugins.Android.application)
     kotlin(Plugins.Kotlin.android)
+    id(Plugins.Kotlin.kapt)
+    id(Plugins.Dagger.hilt)
+
 }
 
 android {
-    namespace = "${Config.Android.id}.android"
+    namespace = Config.Android.id
     compileSdk = 33
     defaultConfig {
         applicationId = Config.Android.id
@@ -40,10 +43,20 @@ android {
 
 dependencies {
     implementation(project(":shared"))
+
+    // AndroidX
     implementation(Libs.AndroidX.Compose.ui)
     implementation(Libs.AndroidX.Compose.uiTooling)
     implementation(Libs.AndroidX.Compose.uiToolingPreview)
     implementation(Libs.AndroidX.Compose.foundation)
     implementation(Libs.AndroidX.Compose.material)
     implementation(Libs.AndroidX.Activity.activity)
+
+    // DI
+    implementation(Libs.DI.Dagger.hilt)
+    implementation(Libs.DI.Dagger.hiltNavigation)
+    kapt(Libs.DI.Dagger.hiltCompiler)
+    kapt(Libs.DI.Dagger.hiltAndroidCompiler)
+
 }
+

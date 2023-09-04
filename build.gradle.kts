@@ -1,3 +1,10 @@
+buildscript {
+    dependencies {
+        classpath(Plugins.Dagger.hiltGradlePlugin)
+        classpath(Plugins.Kotlin.gradlePlugin)
+    }
+}
+
 plugins {
     //trick: for the same plugin versions in all sub-modules
     id(Plugins.Android.application).version(Plugins.Gradle.version).apply(false)

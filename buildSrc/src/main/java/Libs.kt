@@ -1,7 +1,13 @@
 object Libs {
 
     enum class Lib(val version: String) {
-        COMPOSE("1.4.3")
+        // Compose
+        COMPOSE("1.4.3"),
+        MATERIAL_3("1.1.1"),
+
+        // Dagger Hilt
+        DAGGER_HILT("2.42"),
+        HILT_NAVIGATION("1.0.0")
     }
 
     object AndroidX {
@@ -14,7 +20,16 @@ object Libs {
             val uiTooling = "androidx.compose.ui:ui-tooling:${Lib.COMPOSE.version}"
             val uiToolingPreview = "androidx.compose.ui:ui-tooling-preview:${Lib.COMPOSE.version}"
             val foundation = "androidx.compose.foundation:foundation:${Lib.COMPOSE.version}"
-            val material = "androidx.compose.material:material:${Lib.COMPOSE.version}"
+            val material = "androidx.compose.material3:material3:${Lib.MATERIAL_3.version}"
+        }
+    }
+
+    object DI {
+        object Dagger {
+            val hilt = "com.google.dagger:hilt-android:${Lib.DAGGER_HILT.version}"
+            val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:${Lib.DAGGER_HILT.version}"
+            val hiltCompiler = "androidx.hilt:hilt-compiler:${Lib.DAGGER_HILT.version}"
+            val hiltNavigation = "androidx.hilt:hilt-navigation-compose:${Lib.HILT_NAVIGATION.version}"
         }
     }
 }

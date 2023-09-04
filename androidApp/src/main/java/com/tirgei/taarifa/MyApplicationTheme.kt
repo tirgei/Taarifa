@@ -1,4 +1,4 @@
-package com.tirgei.taarifa.android
+package com.tirgei.taarifa
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
