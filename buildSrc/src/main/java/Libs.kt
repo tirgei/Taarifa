@@ -8,7 +8,7 @@ object Libs {
         LIFECYCLE_RUNTIME("2.6.0-beta01"),
 
         // Dagger Hilt
-        DAGGER_HILT("2.42"),
+        DAGGER_HILT("2.48"),
         HILT_NAVIGATION("1.0.0")
     }
 
@@ -32,7 +32,7 @@ object Libs {
     object DI {
         object Dagger {
             val hilt = "com.google.dagger:hilt-android:${Lib.DAGGER_HILT.version}"
-            val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:${Lib.DAGGER_HILT.version}"
+            val hiltAndroidCompiler = "com.google.dagger:hilt-compiler:${Lib.DAGGER_HILT.version}"
             val hiltNavigation = "androidx.hilt:hilt-navigation-compose:${Lib.HILT_NAVIGATION.version}"
         }
     }
