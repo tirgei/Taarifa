@@ -3,8 +3,8 @@ object Config {
         const val id = "com.tirgei.taarifa"
 
         // SDK
-        const val compileSdk = 33
-        const val targetSdk = 33
+        const val compileSdk = 34
+        const val targetSdk = 34
         const val minSdk = 21
 
         // Version

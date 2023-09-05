@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace = Config.Android.id
-    compileSdk = 33
+    compileSdk = Config.Android.compileSdk
     defaultConfig {
         applicationId = Config.Android.id
         minSdk = Config.Android.minSdk
@@ -51,7 +51,9 @@ dependencies {
     implementation(Libs.AndroidX.Compose.foundation)
     implementation(Libs.AndroidX.Compose.material)
     implementation(Libs.AndroidX.Compose.googleFonts)
+    implementation(Libs.AndroidX.Compose.navigation)
     implementation(Libs.AndroidX.Activity.activity)
+    implementation(Libs.AndroidX.Activity.lifecyRuntimeCompose)
 
     // DI
     implementation(Libs.DI.Dagger.hilt)
