@@ -1,11 +1,11 @@
 package com.tirgei.taarifa.ui.details
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 
 @Composable
 fun DetailsScreen(
-    navController: NavController
+    navController: NavHostController
 ) {
 
 }

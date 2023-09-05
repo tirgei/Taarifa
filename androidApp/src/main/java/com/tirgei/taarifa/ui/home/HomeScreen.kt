@@ -17,7 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.tirgei.taarifa.domain.models.NewsPost
 import com.tirgei.taarifa.domain.models.NewsSource
 import com.tirgei.taarifa.theme.TaarifaTheme
@@ -27,7 +27,7 @@ import com.tirgei.taarifa.ui.home.components.NewsPostItem
 
 @Composable
 fun HomeScreen(
-    navController: NavController,
+    navController: NavHostController,
     viewModel: HomeViewModel = hiltViewModel()
 ) {
     val homeScreenState by viewModel.homeScreenState.collectAsStateWithLifecycle()
@@ -40,7 +40,9 @@ fun HomeScreen(
     Column(
         modifier = Modifier.fillMaxSize(),
     ) {
-        AppBar()
+        AppBar(
+            modifier = Modifier.fillMaxWidth()
+        )
 
         Box(modifier = Modifier.fillMaxSize()) {
             if (homeScreenState.isLoading) {

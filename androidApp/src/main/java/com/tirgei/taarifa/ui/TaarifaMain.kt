@@ -19,7 +19,7 @@ fun TaarifaMain() {
             HomeScreen(navController = navController)
         }
         
-        composable(route = Screen.Home.route) {
+        composable(route = Screen.Details.route) {
             DetailsScreen(navController = navController)
         }
     }

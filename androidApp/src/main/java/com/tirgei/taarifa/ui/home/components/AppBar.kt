@@ -19,9 +19,11 @@ import androidx.compose.ui.unit.dp
 import com.tirgei.taarifa.theme.TaarifaTheme
 
 @Composable
-fun AppBar() {
+fun AppBar(
+    modifier: Modifier = Modifier
+) {
     Row(
-        modifier = Modifier.padding(vertical = 10.dp),
+        modifier = modifier.padding(16.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(
@@ -41,7 +43,7 @@ fun AppBar() {
                 imageVector = Icons.Rounded.Search,
                 contentDescription = "Search",
                 tint = MaterialTheme.colorScheme.onBackground,
-                modifier = Modifier.size(35.dp)
+                modifier = Modifier.size(30.dp)
             )
         }
     }

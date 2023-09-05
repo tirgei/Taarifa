@@ -26,8 +26,7 @@ fun NewsPostItem(newsPost: NewsPost, onNewsClick: (NewsPost) -> Unit) {
     ) {
         Text(
             text = newsPost.title,
-            style = MaterialTheme.typography.titleMedium,
-            color = MaterialTheme.colorScheme.onPrimary
+            style = MaterialTheme.typography.titleMedium
         )
 
         Spacer(modifier = Modifier.height(5.dp))
@@ -37,16 +36,14 @@ fun NewsPostItem(newsPost: NewsPost, onNewsClick: (NewsPost) -> Unit) {
         ) {
             Text(
                 text = newsPost.author,
-                style = MaterialTheme.typography.displaySmall,
-                color = MaterialTheme.colorScheme.onSecondary
+                style = MaterialTheme.typography.displaySmall
             )
 
             Spacer(modifier = Modifier.width(10.dp))
 
             Text(
                 text = newsPost.publishedAt,
-                style = MaterialTheme.typography.displaySmall,
-                color = MaterialTheme.colorScheme.onSecondary
+                style = MaterialTheme.typography.displaySmall
             )
         }
     }
