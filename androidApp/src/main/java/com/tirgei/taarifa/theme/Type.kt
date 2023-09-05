@@ -32,6 +32,11 @@ val typography = Typography(
         fontWeight = FontWeight.Bold,
         fontSize = 16.sp
     ),
+    displayLarge = TextStyle(
+        fontFamily = fontFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 16.sp
+    ),
     displayMedium = TextStyle(
         fontFamily = fontFamily,
         fontWeight = FontWeight.Normal,

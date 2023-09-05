@@ -18,12 +18,21 @@ class HomeViewModel @Inject constructor(
     private val mutableNewsListState = MutableStateFlow(listOf<NewsPost>())
     val newsListState = mutableNewsListState.asStateFlow() // Flow for news posts
 
+    private val mutableNewsCategoriesState = MutableStateFlow(listOf<String>())
+    val newsCategoriesState = mutableNewsCategoriesState.asStateFlow() // Flow for news categories
+
     private val mutableHomeScreenState = MutableStateFlow(HomeScreenState())
     val homeScreenState = mutableHomeScreenState.asStateFlow() // Flow for home screen state
 
     fun fetchNewsPosts() = viewModelScope.launch {
-        print("fetching news post")
         mutableNewsListState.emit(newsRepository.fetchNews())
+    }
+
+    fun fetchNewsCategories() = viewModelScope.launch {
+        mutableNewsCategoriesState.emit(listOf(
+            "For You", "Featured", "Tech", "Sports", "Finance", "Weather", "Government",
+            "Business", "Fashion", "Entertainment"
+        ))
     }
 
 }

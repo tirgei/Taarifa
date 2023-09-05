@@ -6,12 +6,18 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -23,6 +29,7 @@ import com.tirgei.taarifa.domain.models.NewsSource
 import com.tirgei.taarifa.theme.TaarifaTheme
 import com.tirgei.taarifa.ui.Screen
 import com.tirgei.taarifa.ui.home.components.AppBar
+import com.tirgei.taarifa.ui.home.components.NewsCategoryItem
 import com.tirgei.taarifa.ui.home.components.NewsPostItem
 
 @Composable
@@ -31,9 +38,11 @@ fun HomeScreen(
     viewModel: HomeViewModel = hiltViewModel()
 ) {
     val homeScreenState by viewModel.homeScreenState.collectAsStateWithLifecycle()
+    val newsCategoriesState by viewModel.newsCategoriesState.collectAsStateWithLifecycle()
     val newsList by viewModel.newsListState.collectAsStateWithLifecycle()
 
     LaunchedEffect(key1 = true) {
+        viewModel.fetchNewsCategories()
         viewModel.fetchNewsPosts()
     }
 
@@ -50,9 +59,34 @@ fun HomeScreen(
             } else if (homeScreenState.isErrorState) {
                 Text(text = "Something went wrong.")
             } else {
-                NewsList(news = newsList) {
-                    navController.navigate("${Screen.Details}/${it.title}")
+                Column {
+                    CategoriesList(newsCategoriesState)
+
+                    NewsList(news = newsList) {
+                        navController.navigate("${Screen.Details}/${it.title}")
+                    }
                 }
+            }
+        }
+    }
+}
+
+@Composable
+fun CategoriesList(categories: List<String>) {
+    var selectedItem by remember {
+        mutableIntStateOf(1)
+    }
+
+    LazyRow(
+        modifier = Modifier.fillMaxWidth()
+            .padding(10.dp)
+    ) {
+        itemsIndexed(categories) { index, category ->
+            NewsCategoryItem(
+                title = category,
+                isSelected = index == selectedItem
+            ) {
+                selectedItem = index
             }
         }
     }
