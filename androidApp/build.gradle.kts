@@ -60,5 +60,8 @@ dependencies {
     implementation(Libs.DI.Dagger.hiltNavigation)
     kapt(Libs.DI.Dagger.hiltAndroidCompiler)
 
+    // Coil
+    implementation(Libs.Images.Coil.coil)
+
 }
 

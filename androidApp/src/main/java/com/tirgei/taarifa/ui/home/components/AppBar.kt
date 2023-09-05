@@ -27,7 +27,7 @@ fun AppBar(
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(
-            text = "Daily News",
+            text = "Taarifa",
             style = MaterialTheme.typography.titleLarge,
             modifier = Modifier.weight(1f)
         )

@@ -9,7 +9,10 @@ object Libs {
 
         // Dagger Hilt
         DAGGER_HILT("2.48"),
-        HILT_NAVIGATION("1.0.0")
+        HILT_NAVIGATION("1.0.0"),
+
+        // Coik
+        COIL("2.4.0")
     }
 
     object AndroidX {
@@ -34,6 +37,12 @@ object Libs {
             val hilt = "com.google.dagger:hilt-android:${Lib.DAGGER_HILT.version}"
             val hiltAndroidCompiler = "com.google.dagger:hilt-compiler:${Lib.DAGGER_HILT.version}"
             val hiltNavigation = "androidx.hilt:hilt-navigation-compose:${Lib.HILT_NAVIGATION.version}"
+        }
+    }
+
+    object Images {
+        object Coil {
+            val coil = "io.coil-kt:coil-compose:${Lib.COIL.version}"
         }
     }
 }
