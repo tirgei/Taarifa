@@ -22,6 +22,7 @@ class HomeViewModel @Inject constructor(
     val homeScreenState = mutableHomeScreenState.asStateFlow() // Flow for home screen state
 
     fun fetchNewsPosts() = viewModelScope.launch {
+        print("fetching news post")
         mutableNewsListState.emit(newsRepository.fetchNews())
     }
 

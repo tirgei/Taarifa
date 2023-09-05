@@ -10,12 +10,15 @@ import com.tirgei.taarifa.ui.home.HomeScreen
 @Composable
 fun TaarifaMain() {
     val navController = rememberNavController()
-
-    NavHost(navController = navController, startDestination = Screen.Home.route) {
+    
+    NavHost(
+        navController = navController,
+        startDestination = Screen.Home.route
+    ) {
         composable(route = Screen.Home.route) {
             HomeScreen(navController = navController)
         }
-
+        
         composable(route = Screen.Home.route) {
             DetailsScreen(navController = navController)
         }
