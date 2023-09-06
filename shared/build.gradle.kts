@@ -5,6 +5,7 @@ plugins {
     kotlin(Plugins.Kotlin.multiplatform)
     id(Plugins.Android.library)
     kotlin(Plugins.Kotlin.serialization) version Plugins.Versions.kotlin
+    id(Plugins.Kotest.multiplatform) version Libs.Lib.KOTEST.version
     id(Plugins.BuildKonfig.buildKonfig)
 }
 
@@ -53,6 +54,8 @@ kotlin {
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
+                implementation(Libs.Test.Kotest.core)
+                implementation(Libs.Test.Kotest.assertions)
             }
         }
 

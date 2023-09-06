@@ -25,6 +25,9 @@ object Libs {
 
         // Logging
         NAPIER("2.6.1"),
+
+        // Kotest
+        KOTEST("5.7.1"),
     }
 
     object AndroidX {
@@ -83,5 +86,12 @@ object Libs {
 
     object Logging {
         val napier = "io.github.aakira:napier:${Lib.NAPIER.version}"
+    }
+
+    object Test {
+        object Kotest {
+            val core = "io.kotest:kotest-framework-engine:${Lib.KOTEST.version}"
+            val assertions = "io.kotest:kotest-assertions-core:${Lib.KOTEST.version}"
+        }
     }
 }

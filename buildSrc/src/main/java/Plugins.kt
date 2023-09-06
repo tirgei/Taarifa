@@ -22,4 +22,8 @@ object Plugins {
         const val buildKonfig = "com.codingfeline.buildkonfig"
         val gradlePlugin = "com.codingfeline.buildkonfig:buildkonfig-gradle-plugin:${Libs.Lib.BUILD_KONFIG.version}"
     }
+
+    object Kotest {
+        val multiplatform = "io.kotest.multiplatform"
+    }
 }

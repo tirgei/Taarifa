@@ -2,6 +2,7 @@ package com.tirgei.taarifa.ui.home
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -103,8 +104,8 @@ fun CategoriesList(categories: List<String>) {
 fun NewsList(news: List<NewsPost>, onNewsClick: (NewsPost) -> Unit) {
     LazyColumn(
         modifier = Modifier
-            .fillMaxWidth()
-            .padding(10.dp)
+            .fillMaxWidth(),
+        contentPadding = PaddingValues(10.dp)
     ) {
         items(news) { newsPost ->
             NewsPostItem(newsPost = newsPost, onNewsClick = onNewsClick)

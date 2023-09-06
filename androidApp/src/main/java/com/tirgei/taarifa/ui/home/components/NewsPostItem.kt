@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
@@ -45,26 +46,17 @@ fun NewsPostItem(
         ) {
             Text(
                 text = newsPost.title,
-                style = MaterialTheme.typography.titleMedium
+                style = MaterialTheme.typography.titleMedium,
+                maxLines = 2,
+                overflow = TextOverflow.Ellipsis
             )
 
             Spacer(modifier = Modifier.height(5.dp))
 
-            Row(
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = newsPost.author,
-                    style = MaterialTheme.typography.displaySmall
-                )
-
-                Spacer(modifier = Modifier.width(10.dp))
-
-                Text(
-                    text = newsPost.publishedAt,
-                    style = MaterialTheme.typography.displaySmall
-                )
-            }
+            Text(
+                text = newsPost.publishedAt,
+                style = MaterialTheme.typography.displaySmall
+            )
         }
     }
 
