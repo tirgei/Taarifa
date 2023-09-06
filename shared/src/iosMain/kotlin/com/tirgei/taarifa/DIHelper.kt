@@ -12,5 +12,6 @@ import org.koin.core.component.get
  * An example is when we need to use [NewsRepository] from the native iOS ViewModel
  */
 object DIHelper: KoinComponent {
+
     fun getNewsRepository(): INewsRepository = get()
 }

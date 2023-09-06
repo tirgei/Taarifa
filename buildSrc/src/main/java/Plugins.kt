@@ -23,6 +23,11 @@ object Plugins {
         val gradlePlugin = "com.codingfeline.buildkonfig:buildkonfig-gradle-plugin:${Libs.Lib.BUILD_KONFIG.version}"
     }
 
+    object SqlDelight {
+        val sqlDelight = "app.cash.sqldelight"
+        val gradlePlugin = "app.cash.sqldelight:gradle-plugin:${Libs.Lib.SQL_DELIGHT.version}"
+    }
+
     object Kotest {
         val multiplatform = "io.kotest.multiplatform"
     }

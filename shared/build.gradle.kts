@@ -7,6 +7,7 @@ plugins {
     kotlin(Plugins.Kotlin.serialization) version Plugins.Versions.kotlin
     id(Plugins.Kotest.multiplatform) version Libs.Lib.KOTEST.version
     id(Plugins.BuildKonfig.buildKonfig)
+    id(Plugins.SqlDelight.sqlDelight)
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -49,6 +50,10 @@ kotlin {
 
                 // Logging
                 api(Libs.Logging.napier)
+
+                // SqlDelight
+                implementation(Libs.Storage.SqlDelight.runtime)
+                implementation(Libs.Storage.SqlDelight.coroutines)
             }
         }
         val commonTest by getting {
@@ -62,12 +67,14 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 implementation(Libs.Network.Ktor.Android.client)
+                implementation(Libs.Storage.SqlDelight.Android.driver)
             }
         }
 
         val iosMain by getting {
             dependencies {
                 implementation(Libs.Network.Ktor.iOS.client)
+                implementation(Libs.Storage.SqlDelight.iOS.driver)
             }
         }
     }
@@ -95,5 +102,13 @@ buildkonfig {
 
         buildConfigField(STRING, "BASE_URL", "${properties.getProperty("NEWS_BASE_URL")}")
         buildConfigField(STRING, "API_KEY", "${properties.getProperty("NEWS_API_KEY")}")
+    }
+}
+
+sqldelight {
+    databases {
+        create("TaarifaDatabase") {
+            packageName.set("com.tirgei.taarifa.database")
+        }
     }
 }

@@ -9,6 +9,8 @@ import org.koin.dsl.module
  * Modules used by the android app
  */
 val appModule = module {
+
+    // ViewModels
     viewModel { HomeViewModel(get()) }
     viewModel { DetailsViewModel(get()) }
 }

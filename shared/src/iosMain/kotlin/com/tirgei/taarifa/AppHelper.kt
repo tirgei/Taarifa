@@ -1,6 +1,6 @@
 package com.tirgei.taarifa
 
-import com.tirgei.taarifa.di.sharedModule
+import com.tirgei.taarifa.di.getBaseModules
 import io.github.aakira.napier.DebugAntilog
 import io.github.aakira.napier.Napier
 import org.koin.core.context.startKoin
@@ -12,6 +12,6 @@ fun initApp() {
     Napier.base(DebugAntilog())
 
     startKoin {
-        modules(sharedModule())
+        modules(getBaseModules())
     }
 }

@@ -16,7 +16,7 @@ import org.koin.dsl.module
 /**
  * Modules used by both platforms
  */
-fun sharedModule() = module {
+val sharedModule = module {
     // Dispatcher
     factory { provideDispatcher() }
 
@@ -44,3 +44,10 @@ fun sharedModule() = module {
     single<INewsRepository> { NewsRepository(get(), get()) }
 
 }
+
+/**
+ * Modules that are setup in the shared module. Includes both shared modules
+ * plus platform modules which is made up of modules with individual
+ * implementations for both platforms
+ */
+fun getBaseModules() = sharedModule + platformModule

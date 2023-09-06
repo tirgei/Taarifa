@@ -1,0 +1,34 @@
+CREATE TABLE NewsPostEntity (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    author TEXT,
+    title TEXT NOT NULL,
+    description TEXT NOT NULL,
+    url TEXT NOT NULL,
+    urlToImage TEXT,
+    publishedAt TEXT NOT NULL,
+    content TEXT NOT NULL,
+    sourceId TEXT,
+    sourceName TEXT
+);
+
+insertNewsPost:
+INSERT INTO NewsPostEntity (
+    id,
+    author,
+    title,
+    description,
+    url,
+    urlToImage,
+    publishedAt,
+    content,
+    sourceId,
+    sourceName
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+getNewsPost:
+SELECT *
+FROM NewsPostEntity
+WHERE title LIKE :title;
+
+deleteNewsPosts:
+DELETE FROM NewsPostEntity;

@@ -28,6 +28,9 @@ object Libs {
 
         // Kotest
         KOTEST("5.7.1"),
+
+        // SQLDelight
+        SQL_DELIGHT("2.0.0")
     }
 
     object AndroidX {
@@ -86,6 +89,20 @@ object Libs {
 
     object Logging {
         val napier = "io.github.aakira:napier:${Lib.NAPIER.version}"
+    }
+    object Storage {
+        object SqlDelight {
+            val runtime = "app.cash.sqldelight:runtime:${Lib.SQL_DELIGHT.version}"
+            val coroutines = "app.cash.sqldelight:coroutines-extensions:${Lib.SQL_DELIGHT.version}"
+
+            object Android {
+                val driver = "app.cash.sqldelight:android-driver:${Lib.SQL_DELIGHT.version}"
+            }
+
+            object iOS {
+                val driver = "app.cash.sqldelight:native-driver:${Lib.SQL_DELIGHT.version}"
+            }
+        }
     }
 
     object Test {
