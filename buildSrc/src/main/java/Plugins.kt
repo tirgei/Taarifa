@@ -1,6 +1,8 @@
 object Plugins {
-    object Gradle {
-        const val version = "8.1.1"
+
+    object Versions {
+        val gradle = "8.1.1"
+        val kotlin = "1.8.21"
     }
 
     object Android {
@@ -9,10 +11,10 @@ object Plugins {
     }
 
     object Kotlin {
-        const val version = "1.8.21"
         const val android = "android"
         const val multiplatform = "multiplatform"
         const val kapt = "kotlin-kapt"
-        val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
+        val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
+        val serialization = "plugin.serialization"
     }
 }

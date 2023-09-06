@@ -15,6 +15,10 @@ object Libs {
 
         // Coroutines
         COROUTINES("1.7.3"),
+
+        // Network
+        KTOR("2.3.4"),
+        KOTLIN_DATE_TIME("0.4.1"),
     }
 
     object AndroidX {
@@ -51,5 +55,23 @@ object Libs {
         object Coil {
             val coil = "io.coil-kt:coil-compose:${Lib.COIL.version}"
         }
+    }
+
+    object Network {
+        object Ktor {
+            val core = "io.ktor:ktor-client-core:${Lib.KTOR.version}"
+            val contentNegotiation = "io.ktor:ktor-client-content-negotiation:${Lib.KTOR.version}"
+            val serialization = "io.ktor:ktor-serialization-kotlinx-json:${Lib.KTOR.version}"
+
+            object Android {
+                val client = "io.ktor:ktor-client-android:${Lib.KTOR.version}"
+            }
+
+            object iOS {
+                val client = "io.ktor:ktor-client-darwin:${Lib.KTOR.version}"
+            }
+        }
+
+        val dateTime = "org.jetbrains.kotlinx:kotlinx-datetime:${Lib.KOTLIN_DATE_TIME.version}"
     }
 }

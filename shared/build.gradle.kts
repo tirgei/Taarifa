@@ -1,6 +1,7 @@
 plugins {
     kotlin(Plugins.Kotlin.multiplatform)
     id(Plugins.Android.library)
+    kotlin(Plugins.Kotlin.serialization) version Plugins.Versions.kotlin
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -30,13 +31,33 @@ kotlin {
             dependencies {
                 //put your multiplatform dependencies here
                 implementation(Libs.AndroidX.Coroutines.core)
+
+                // DI
                 implementation(Libs.DI.Koin.core)
                 implementation(Libs.DI.Koin.test)
+
+                // Network
+                implementation(Libs.Network.Ktor.core)
+                implementation(Libs.Network.Ktor.contentNegotiation)
+                implementation(Libs.Network.Ktor.serialization)
+                implementation(Libs.Network.dateTime)
             }
         }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
+            }
+        }
+
+        val androidMain by getting {
+            dependencies {
+                implementation(Libs.Network.Ktor.Android.client)
+            }
+        }
+
+        val iosMain by getting {
+            dependencies {
+                implementation(Libs.Network.Ktor.iOS.client)
             }
         }
     }
