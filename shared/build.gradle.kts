@@ -12,7 +12,7 @@ plugins {
 kotlin {
     targetHierarchy.default()
 
-    android {
+    androidTarget {
         compilations.all {
             kotlinOptions {
                 jvmTarget = "17"
@@ -87,7 +87,7 @@ buildkonfig {
         val properties = Properties()
         properties.load(project.rootProject.file("local.properties").inputStream())
 
-        buildConfigField(STRING, "baseUrl", "\"${properties.getProperty("NEWS_BASE_URL")}\"")
-        buildConfigField(STRING, "apiKey", "\"${properties.getProperty("NEWS_API_KEY")}\"")
+        buildConfigField(STRING, "BASE_URL", "${properties.getProperty("NEWS_BASE_URL")}")
+        buildConfigField(STRING, "API_KEY", "${properties.getProperty("NEWS_API_KEY")}")
     }
 }

@@ -14,7 +14,7 @@ object Libs {
         KOIN("3.2.0"),
 
         // Coroutines
-        COROUTINES("1.7.3"),
+        COROUTINES("1.6.4"),
 
         // Network
         KTOR("2.3.4"),

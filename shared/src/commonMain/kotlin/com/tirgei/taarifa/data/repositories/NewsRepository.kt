@@ -1,12 +1,14 @@
 package com.tirgei.taarifa.data.repositories
 
 import com.tirgei.taarifa.core.Dispatcher
+import com.tirgei.taarifa.data.network.ApiService
 import com.tirgei.taarifa.domain.models.NewsPost
 import com.tirgei.taarifa.domain.models.NewsSource
 import com.tirgei.taarifa.domain.respositories.INewsRepository
 import kotlinx.coroutines.withContext
 
 class NewsRepository(
+    private val apiService: ApiService,
     private val dispatcher: Dispatcher
 ) : INewsRepository {
 
