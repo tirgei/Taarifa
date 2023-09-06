@@ -2,17 +2,14 @@ package com.tirgei.taarifa.ui.details
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tirgei.taarifa.data.repositories.NewsRepository
-import dagger.hilt.android.lifecycle.HiltViewModel
+import com.tirgei.taarifa.domain.respositories.INewsRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-@HiltViewModel
-class DetailsViewModel @Inject constructor(
-    private val newsRepository: NewsRepository
+class DetailsViewModel constructor(
+    private val newsRepository: INewsRepository
 ): ViewModel() {
 
     private val mutableDetailsScreenState = MutableStateFlow(DetailsScreenState())

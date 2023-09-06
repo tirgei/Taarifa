@@ -1,6 +1,5 @@
 buildscript {
     dependencies {
-        classpath(Plugins.Dagger.hiltGradlePlugin)
         classpath(Plugins.Kotlin.gradlePlugin)
     }
 }

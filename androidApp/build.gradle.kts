@@ -2,8 +2,6 @@ plugins {
     id(Plugins.Android.application)
     kotlin(Plugins.Kotlin.android)
     id(Plugins.Kotlin.kapt)
-    id(Plugins.Dagger.hilt)
-
 }
 
 android {
@@ -56,9 +54,8 @@ dependencies {
     implementation(Libs.AndroidX.Activity.lifecyRuntimeCompose)
 
     // DI
-    implementation(Libs.DI.Dagger.hilt)
-    implementation(Libs.DI.Dagger.hiltNavigation)
-    kapt(Libs.DI.Dagger.hiltAndroidCompiler)
+    implementation(Libs.DI.Koin.android)
+    implementation(Libs.DI.Koin.compose)
 
     // Coil
     implementation(Libs.Images.Coil.coil)

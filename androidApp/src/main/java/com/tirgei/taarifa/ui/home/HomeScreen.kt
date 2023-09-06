@@ -15,13 +15,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import com.tirgei.taarifa.domain.models.NewsPost
@@ -31,11 +29,12 @@ import com.tirgei.taarifa.ui.Screen
 import com.tirgei.taarifa.ui.home.components.AppBar
 import com.tirgei.taarifa.ui.home.components.NewsCategoryItem
 import com.tirgei.taarifa.ui.home.components.NewsPostItem
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun HomeScreen(
     navController: NavHostController,
-    viewModel: HomeViewModel = hiltViewModel()
+    viewModel: HomeViewModel = koinViewModel()
 ) {
     val homeScreenState by viewModel.homeScreenState.collectAsStateWithLifecycle()
     val newsCategoriesState by viewModel.newsCategoriesState.collectAsStateWithLifecycle()
@@ -78,7 +77,8 @@ fun CategoriesList(categories: List<String>) {
     }
 
     LazyRow(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth()
             .padding(10.dp)
     ) {
         itemsIndexed(categories) { index, category ->

@@ -29,6 +29,9 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 //put your multiplatform dependencies here
+                implementation(Libs.AndroidX.Coroutines.core)
+                implementation(Libs.DI.Koin.core)
+                implementation(Libs.DI.Koin.test)
             }
         }
         val commonTest by getting {

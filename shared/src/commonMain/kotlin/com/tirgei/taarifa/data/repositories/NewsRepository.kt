@@ -1,17 +1,21 @@
 package com.tirgei.taarifa.data.repositories
 
+import com.tirgei.taarifa.core.Dispatcher
 import com.tirgei.taarifa.domain.models.NewsPost
 import com.tirgei.taarifa.domain.models.NewsSource
 import com.tirgei.taarifa.domain.respositories.INewsRepository
+import kotlinx.coroutines.withContext
 
-class NewsRepository : INewsRepository {
+class NewsRepository(
+    private val dispatcher: Dispatcher
+) : INewsRepository {
 
-    override suspend fun fetchNews(): List<NewsPost> {
-        return newsPosts
+    override suspend fun fetchNews(): List<NewsPost> = withContext(dispatcher.io) {
+        newsPosts
     }
 
-    override suspend fun fetchNewsPost(id: String): NewsPost {
-        return newsPosts.first { it.title == id }
+    override suspend fun fetchNewsPost(id: String): NewsPost = withContext(dispatcher.io) {
+        newsPosts.first { it.title == id }
     }
 
     private val newsPosts = listOf(

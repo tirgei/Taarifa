@@ -7,12 +7,14 @@ object Libs {
         COMPOSE_NAVIGATION("2.7.1"),
         LIFECYCLE_RUNTIME("2.6.0-beta01"),
 
-        // Dagger Hilt
-        DAGGER_HILT("2.48"),
-        HILT_NAVIGATION("1.0.0"),
+        // Coil
+        COIL("2.4.0"),
 
-        // Coik
-        COIL("2.4.0")
+        // Koin
+        KOIN("3.2.0"),
+
+        // Coroutines
+        COROUTINES("1.7.3"),
     }
 
     object AndroidX {
@@ -30,13 +32,18 @@ object Libs {
             val googleFonts = "androidx.compose.ui:ui-text-google-fonts:${Lib.COMPOSE.version}"
             val navigation = "androidx.navigation:navigation-compose:${Lib.COMPOSE_NAVIGATION.version}"
         }
+
+        object Coroutines {
+            val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Lib.COROUTINES.version}"
+        }
     }
 
     object DI {
-        object Dagger {
-            val hilt = "com.google.dagger:hilt-android:${Lib.DAGGER_HILT.version}"
-            val hiltAndroidCompiler = "com.google.dagger:hilt-compiler:${Lib.DAGGER_HILT.version}"
-            val hiltNavigation = "androidx.hilt:hilt-navigation-compose:${Lib.HILT_NAVIGATION.version}"
+        object Koin {
+            val core = "io.insert-koin:koin-core:${Lib.KOIN.version}"
+            val test = "io.insert-koin:koin-test:${Lib.KOIN.version}"
+            val android = "io.insert-koin:koin-android:${Lib.KOIN.version}"
+            val compose = "io.insert-koin:koin-androidx-compose:${Lib.KOIN.version}"
         }
     }
 

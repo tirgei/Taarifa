@@ -2,17 +2,14 @@ package com.tirgei.taarifa.ui.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tirgei.taarifa.data.repositories.NewsRepository
 import com.tirgei.taarifa.domain.models.NewsPost
-import dagger.hilt.android.lifecycle.HiltViewModel
+import com.tirgei.taarifa.domain.respositories.INewsRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-@HiltViewModel
-class HomeViewModel @Inject constructor(
-    private val newsRepository: NewsRepository
+class HomeViewModel constructor(
+    private val newsRepository: INewsRepository
 ): ViewModel() {
 
     private val mutableNewsListState = MutableStateFlow(listOf<NewsPost>())

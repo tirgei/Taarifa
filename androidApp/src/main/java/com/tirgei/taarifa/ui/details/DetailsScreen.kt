@@ -28,20 +28,19 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import androidx.core.view.WindowCompat
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.tirgei.taarifa.domain.models.NewsPost
 import com.tirgei.taarifa.ui.details.components.DetailsAppBar
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun DetailsScreen(
     navController: NavHostController,
     newsPostId: String,
-    viewModel: DetailsViewModel = hiltViewModel()
+    viewModel: DetailsViewModel = koinViewModel()
 ) {
     val detailsScreenState by viewModel.detailsScreenState.collectAsStateWithLifecycle()
 
