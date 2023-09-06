@@ -18,6 +18,7 @@ import androidx.compose.material.icons.rounded.Person
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -48,42 +49,47 @@ fun DetailsScreen(
         viewModel.fetchNewsPost(newsPostId)
     }
 
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        if (detailsScreenState.isLoading) {
-            CircularProgressIndicator()
-        } else if (detailsScreenState.isErrorState || detailsScreenState.newsPost == null) {
-            Text(text = "Something went wrong")
-        } else {
-            val newsPost = detailsScreenState.newsPost!!
-
-            LazyColumn(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .align(Alignment.TopCenter),
-            ) {
-                item {
-                    ImageSection(
-                        image = newsPost.urlToImage,
-                        description = newsPost.title
-                    )
-                }
-
-                item {
-                    NewsDetails(newsPost = newsPost)
-                }
-            }
-
+    Scaffold(
+        topBar = {
             DetailsAppBar(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .align(Alignment.TopCenter),
+                    .fillMaxWidth(),
                 onBackPressed = { navController.popBackStack() },
                 onFavoritePressed = { print("Favorite") },
                 onSharePressed = { print("Share") }
             )
+        }
+    ) {
+        Box(
+            modifier = Modifier.fillMaxSize()
+                .padding(it),
+            contentAlignment = Alignment.Center
+        ) {
+            if (detailsScreenState.isLoading) {
+                CircularProgressIndicator()
+            } else if (detailsScreenState.isErrorState || detailsScreenState.newsPost == null) {
+                Text(text = "Something went wrong")
+            } else {
+                val newsPost = detailsScreenState.newsPost!!
+
+                LazyColumn(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .align(Alignment.TopCenter),
+                ) {
+                    item {
+                        ImageSection(
+                            image = newsPost.urlToImage,
+                            description = newsPost.title
+                        )
+                    }
+
+                    item {
+                        NewsDetails(newsPost = newsPost)
+                    }
+                }
+
+            }
         }
     }
 }
