@@ -22,7 +22,7 @@ class TaarifaApp: Application() {
     private fun initKoin() {
         startKoin {
             androidContext(this@TaarifaApp)
-            modules(appModule + getBaseModules() + module { single<Context> { this@TaarifaApp } })
+            modules(appModule + getBaseModules())
         }
     }
 

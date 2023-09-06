@@ -1,9 +1,12 @@
 package com.tirgei.taarifa.di
 
 import com.tirgei.taarifa.BuildKonfig
+import com.tirgei.taarifa.core.DatabaseDriverFactory
 import com.tirgei.taarifa.core.provideDispatcher
+import com.tirgei.taarifa.data.local.NewsCache
 import com.tirgei.taarifa.data.network.ApiService
 import com.tirgei.taarifa.data.repositories.NewsRepository
+import com.tirgei.taarifa.database.TaarifaDatabase
 import com.tirgei.taarifa.domain.respositories.INewsRepository
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -40,8 +43,12 @@ val sharedModule = module {
     }
     single { ApiService(get()) }
 
+    // Local cache
+    single { TaarifaDatabase(get<DatabaseDriverFactory>().create()) }
+    single { NewsCache(get(), get()) }
+
     // Repositories
-    single<INewsRepository> { NewsRepository(get(), get()) }
+    single<INewsRepository> { NewsRepository(get(), get(), get()) }
 
 }
 

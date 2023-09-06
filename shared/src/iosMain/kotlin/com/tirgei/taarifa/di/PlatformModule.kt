@@ -1,15 +1,12 @@
 package com.tirgei.taarifa.di
 
-import app.cash.sqldelight.driver.native.NativeSqliteDriver
-import com.tirgei.taarifa.database.TaarifaDatabase
+import com.tirgei.taarifa.core.DatabaseDriverFactory
+import com.tirgei.taarifa.core.IosDatabaseDriverFactory
 import org.koin.core.module.Module
+import org.koin.core.module.dsl.singleOf
+import org.koin.dsl.bind
 import org.koin.dsl.module
 
 actual val platformModule: Module = module {
-    single {
-        NativeSqliteDriver(
-            schema = TaarifaDatabase.Schema,
-            name = "taarifa.db"
-        )
-    }
+    singleOf(::IosDatabaseDriverFactory) bind DatabaseDriverFactory::class
 }

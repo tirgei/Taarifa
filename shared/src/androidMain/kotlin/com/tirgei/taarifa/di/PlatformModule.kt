@@ -1,16 +1,12 @@
 package com.tirgei.taarifa.di
 
-import app.cash.sqldelight.driver.android.AndroidSqliteDriver
-import com.tirgei.taarifa.database.TaarifaDatabase
+import com.tirgei.taarifa.core.AndroidDatabaseDriverFactory
+import com.tirgei.taarifa.core.DatabaseDriverFactory
 import org.koin.core.module.Module
+import org.koin.core.module.dsl.singleOf
+import org.koin.dsl.bind
 import org.koin.dsl.module
 
 actual val platformModule: Module = module {
-    single {
-        AndroidSqliteDriver(
-            schema = TaarifaDatabase.Schema,
-            context = get(),
-            name = "taarifa.db"
-        )
-    }
+    singleOf(::AndroidDatabaseDriverFactory) bind DatabaseDriverFactory::class
 }

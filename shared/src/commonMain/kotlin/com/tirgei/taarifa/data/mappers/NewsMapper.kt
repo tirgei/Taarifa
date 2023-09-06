@@ -3,6 +3,7 @@ package com.tirgei.taarifa.data.mappers
 import com.tirgei.taarifa.core.DateFormatter
 import com.tirgei.taarifa.data.network.dto.NewsPostDto
 import com.tirgei.taarifa.data.network.dto.NewsSourceDto
+import com.tirgei.taarifa.database.NewsPostEntity
 import com.tirgei.taarifa.domain.models.NewsPost
 import com.tirgei.taarifa.domain.models.NewsSource
 import com.tirgei.taarifa.utils.formatToDate
@@ -21,4 +22,18 @@ fun NewsPostDto.toDomain() = NewsPost(
     urlToImage = this.urlToImage.orEmpty(),
     publishedAt = this.publishedAt?.formatToDate("dd MMM yyyy").orEmpty(),
     content = this.content.orEmpty()
+)
+
+fun NewsPostEntity.toDomain() = NewsPost(
+    source = NewsSource(
+        id = this.sourceId.orEmpty(),
+        name = this.sourceName.orEmpty()
+    ),
+    author = this.author.orEmpty(),
+    title = this.title,
+    description = this.description,
+    url = this.url,
+    urlToImage = this.urlToImage.orEmpty(),
+    publishedAt = this.publishedAt.formatToDate("dd MMM yyyy").orEmpty(),
+    content = this.content
 )
