@@ -19,6 +19,9 @@ object Libs {
         // Network
         KTOR("2.3.4"),
         KOTLIN_DATE_TIME("0.4.1"),
+
+        // BuildKonfig
+        BUILD_KONFIG("0.14.0")
     }
 
     object AndroidX {

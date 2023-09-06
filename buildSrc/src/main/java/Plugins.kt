@@ -17,4 +17,9 @@ object Plugins {
         val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
         val serialization = "plugin.serialization"
     }
+
+    object BuildKonfig {
+        const val buildKonfig = "com.codingfeline.buildkonfig"
+        val gradlePlugin = "com.codingfeline.buildkonfig:buildkonfig-gradle-plugin:${Libs.Lib.BUILD_KONFIG.version}"
+    }
 }

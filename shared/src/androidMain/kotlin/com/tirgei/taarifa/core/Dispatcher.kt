@@ -4,11 +4,11 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 
 /**
- * The dispatcher to use for the android app network requests i.e IO dispatcher
+ * The dispatcher to use for the android app network requests i
  */
 internal class AndroidDispatcher: Dispatcher {
     override val io: CoroutineDispatcher
-        get() =  Dispatchers.IO
+        get() = Dispatchers.IO
 }
 
 internal actual fun provideDispatcher(): Dispatcher = AndroidDispatcher()

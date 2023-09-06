@@ -1,7 +1,11 @@
+import java.util.Properties
+import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
+
 plugins {
     kotlin(Plugins.Kotlin.multiplatform)
     id(Plugins.Android.library)
     kotlin(Plugins.Kotlin.serialization) version Plugins.Versions.kotlin
+    id(Plugins.BuildKonfig.buildKonfig)
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -73,5 +77,17 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+buildkonfig {
+    packageName = Config.Android.id
+
+    defaultConfigs {
+        val properties = Properties()
+        properties.load(project.rootProject.file("local.properties").inputStream())
+
+        buildConfigField(STRING, "baseUrl", "\"${properties.getProperty("NEWS_BASE_URL")}\"")
+        buildConfigField(STRING, "apiKey", "\"${properties.getProperty("NEWS_API_KEY")}\"")
     }
 }
