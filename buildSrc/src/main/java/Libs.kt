@@ -21,7 +21,10 @@ object Libs {
         KOTLIN_DATE_TIME("0.4.1"),
 
         // BuildKonfig
-        BUILD_KONFIG("0.14.0")
+        BUILD_KONFIG("0.14.0"),
+
+        // Logging
+        NAPIER("2.6.1"),
     }
 
     object AndroidX {
@@ -76,5 +79,9 @@ object Libs {
         }
 
         val dateTime = "org.jetbrains.kotlinx:kotlinx-datetime:${Lib.KOTLIN_DATE_TIME.version}"
+    }
+
+    object Logging {
+        val napier = "io.github.aakira:napier:${Lib.NAPIER.version}"
     }
 }

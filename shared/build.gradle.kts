@@ -45,6 +45,9 @@ kotlin {
                 implementation(Libs.Network.Ktor.contentNegotiation)
                 implementation(Libs.Network.Ktor.serialization)
                 implementation(Libs.Network.dateTime)
+
+                // Logging
+                api(Libs.Logging.napier)
             }
         }
         val commonTest by getting {

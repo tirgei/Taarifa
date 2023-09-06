@@ -17,6 +17,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -52,13 +53,18 @@ fun HomeScreen(
             modifier = Modifier.fillMaxWidth()
         )
 
-        Box(modifier = Modifier.fillMaxSize()) {
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
             if (homeScreenState.isLoading) {
                 CircularProgressIndicator()
             } else if (homeScreenState.isErrorState) {
                 Text(text = "Something went wrong.")
             } else {
-                Column {
+                Column(
+                    modifier = Modifier.align(Alignment.TopCenter)
+                ) {
                     CategoriesList(newsCategoriesState)
 
                     NewsList(news = newsList) {

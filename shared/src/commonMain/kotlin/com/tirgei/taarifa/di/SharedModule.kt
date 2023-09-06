@@ -8,6 +8,7 @@ import com.tirgei.taarifa.domain.respositories.INewsRepository
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.defaultRequest
+import io.ktor.http.URLProtocol
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 import org.koin.dsl.module
@@ -23,7 +24,9 @@ fun sharedModule() = module {
     single {
         HttpClient() {
             defaultRequest {
-                url(BuildKonfig.BASE_URL) {
+                url {
+                    protocol = URLProtocol.HTTPS
+                    host = BuildKonfig.BASE_URL
                     parameters.append("apiKey", BuildKonfig.API_KEY)
                 }
             }

@@ -1,6 +1,7 @@
 package com.tirgei.taarifa.data.repositories
 
 import com.tirgei.taarifa.core.Dispatcher
+import com.tirgei.taarifa.data.mappers.toDomain
 import com.tirgei.taarifa.data.network.ApiService
 import com.tirgei.taarifa.domain.models.NewsPost
 import com.tirgei.taarifa.domain.models.NewsSource
@@ -13,7 +14,8 @@ class NewsRepository(
 ) : INewsRepository {
 
     override suspend fun fetchNews(): List<NewsPost> = withContext(dispatcher.io) {
-        newsPosts
+        val response = apiService.fetchTopNews()
+        response.articles.map { it.toDomain() }
     }
 
     override suspend fun fetchNewsPost(id: String): NewsPost = withContext(dispatcher.io) {
