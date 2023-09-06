@@ -63,7 +63,7 @@ fun HomeScreen(
                     CategoriesList(newsCategoriesState)
 
                     NewsList(news = newsList) {
-                        navController.navigate("${Screen.Details}/${it.title}")
+                        navController.navigate("${Screen.Details.route}/${it.title}")
                     }
                 }
             }

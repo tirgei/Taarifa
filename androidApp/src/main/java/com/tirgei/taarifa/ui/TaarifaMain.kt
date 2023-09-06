@@ -19,8 +19,15 @@ fun TaarifaMain() {
             HomeScreen(navController = navController)
         }
         
-        composable(route = Screen.Details.route) {
-            DetailsScreen(navController = navController)
+        composable(
+            route = Screen.Details.routeWithArgs,
+            arguments = Screen.Details.arguments
+        ) { navBackStackEntry ->
+            val newsPostId = navBackStackEntry.arguments?.getString(Screen.Details.newsPostId).orEmpty()
+            DetailsScreen(
+                navController = navController,
+                newsPostId = newsPostId
+            )
         }
     }
 }

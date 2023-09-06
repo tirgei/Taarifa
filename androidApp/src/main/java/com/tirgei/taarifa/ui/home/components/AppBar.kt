@@ -43,7 +43,7 @@ fun AppBar(
                 imageVector = Icons.Rounded.Search,
                 contentDescription = "Search",
                 tint = MaterialTheme.colorScheme.onBackground,
-                modifier = Modifier.size(30.dp)
+                modifier = Modifier.size(25.dp)
             )
         }
     }
