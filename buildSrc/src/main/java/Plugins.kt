@@ -2,7 +2,7 @@ object Plugins {
 
     object Versions {
         val gradle = "8.1.1"
-        val kotlin = "1.8.21"
+        val kotlin = "1.9.0"
     }
 
     object Android {
