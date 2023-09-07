@@ -8,6 +8,7 @@ plugins {
     id(Plugins.Kotest.multiplatform) version Libs.Lib.KOTEST.version
     id(Plugins.BuildKonfig.buildKonfig)
     id(Plugins.SqlDelight.sqlDelight)
+    id(Plugins.KMPNativeCoroutines.nativeCoroutines)
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -111,4 +112,8 @@ sqldelight {
             packageName.set("com.tirgei.taarifa.database")
         }
     }
+}
+
+kotlin.sourceSets.all {
+    languageSettings.optIn("kotlin.experimental.ExperimentalObjCName")
 }

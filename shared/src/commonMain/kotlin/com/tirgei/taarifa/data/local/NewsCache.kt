@@ -1,5 +1,6 @@
 package com.tirgei.taarifa.data.local
 
+import com.rickclephas.kmp.nativecoroutines.NativeCoroutines
 import com.tirgei.taarifa.core.Dispatcher
 import com.tirgei.taarifa.data.network.dto.NewsPostDto
 import com.tirgei.taarifa.database.NewsPostEntity
@@ -12,10 +13,12 @@ class NewsCache (
 ) {
     private val dbQueries = database.newsPostQueries
 
+    @NativeCoroutines
     suspend fun insertNewsPosts(newsPosts: List<NewsPostDto>) = withContext(dispatcher.io) {
         newsPosts.forEach { insertNewsPost(it) }
     }
 
+    @NativeCoroutines
     suspend fun insertNewsPost(newsPostDto: NewsPostDto) = withContext(dispatcher.io) {
         dbQueries.insertNewsPost(
             id = null,
@@ -31,11 +34,13 @@ class NewsCache (
         )
     }
 
+    @NativeCoroutines
     suspend fun fetchNewsPost(title: String): NewsPostEntity = withContext(dispatcher.io) {
         dbQueries.getNewsPost(title)
             .executeAsOne()
     }
 
+    @NativeCoroutines
     suspend fun deleteNewsPosts() = withContext(dispatcher.io) {
         dbQueries.deleteNewsPosts()
     }

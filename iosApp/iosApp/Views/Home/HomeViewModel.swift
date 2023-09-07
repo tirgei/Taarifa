@@ -8,6 +8,8 @@
 
 import Foundation
 import shared
+import KMPNativeCoroutinesAsync
+
 
 class HomeViewModel: ObservableObject {
     @Published private(set) var newsPosts: [NewsPost] = []
@@ -16,19 +18,21 @@ class HomeViewModel: ObservableObject {
     
     private let newsRepository: INewsRepository = DIHelper().getNewsRepository()
     
+    @MainActor
     func fetchNewsCategories() async {
         do {
-            let categories = try await newsRepository.fetchNewsCategories()
+            let categories = try await asyncFunction(for: newsRepository.fetchNewsCategories())
             newsCategories = categories
         } catch {
             print(error)
         }
     }
     
+    @MainActor
     func fetchNewsPosts() async {
         do {
             isLoading = true
-            let news = try await newsRepository.fetchNews()
+            let news = try await asyncFunction(for: newsRepository.fetchNews())
             
             isLoading = false
             newsPosts = news

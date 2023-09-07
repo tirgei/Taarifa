@@ -2,7 +2,8 @@ object Plugins {
 
     object Versions {
         val gradle = "8.1.1"
-        val kotlin = "1.9.0"
+        val kotlin = "1.9.10"
+        val kmpNativeCoroutines = "1.0.0-ALPHA-18"
     }
 
     object Android {
@@ -30,5 +31,9 @@ object Plugins {
 
     object Kotest {
         val multiplatform = "io.kotest.multiplatform"
+    }
+
+    object KMPNativeCoroutines {
+        val nativeCoroutines = "com.rickclephas.kmp.nativecoroutines"
     }
 }
