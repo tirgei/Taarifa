@@ -6,4 +6,6 @@ interface INewsRepository {
     suspend fun fetchNews(): List<NewsPost>
 
     suspend fun fetchNewsPost(id: String): NewsPost
+
+    suspend fun fetchNewsCategories(): List<String>
 }

@@ -43,10 +43,8 @@ class HomeViewModel constructor(
     }
 
     fun fetchNewsCategories() = viewModelScope.launch {
-        mutableNewsCategoriesState.emit(listOf(
-            "For You", "Featured", "Tech", "Sports", "Finance", "Weather", "Government",
-            "Business", "Fashion", "Entertainment"
-        ))
+        val categories = newsRepository.fetchNewsCategories()
+        mutableNewsCategoriesState.emit(categories)
     }
 
 }

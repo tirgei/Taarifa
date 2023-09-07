@@ -27,4 +27,11 @@ class NewsRepository(
     override suspend fun fetchNewsPost(id: String): NewsPost = withContext(dispatcher.io) {
         newsCache.fetchNewsPost(id).toDomain()
     }
+
+    override suspend fun fetchNewsCategories(): List<String> {
+        return listOf(
+            "For You", "Featured", "Tech", "Sports", "Finance", "Weather", "Government",
+            "Business", "Fashion", "Entertainment"
+        )
+    }
 }
