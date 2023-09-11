@@ -16,7 +16,7 @@ class HomeViewModel: ObservableObject {
     @Published private(set) var newsCategories: [String] = []
     @Published private(set) var isLoading = false
     
-    private let newsRepository: INewsRepository = DIHelper().getNewsRepository()
+    private let newsRepository: NewsRepository = DIHelper().getNewsRepository()
     
     @MainActor
     func fetchNewsCategories() async {
@@ -37,6 +37,7 @@ class HomeViewModel: ObservableObject {
             isLoading = false
             newsPosts = news
         } catch {
+            isLoading = false
             print(error)
         }
     }

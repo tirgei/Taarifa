@@ -13,7 +13,33 @@ struct NewsPostItem: View {
     var newsPost: NewsPost
     
     var body: some View {
-        Text(newsPost.title)
+        HStack(alignment: .center, spacing: 10) {
+            AsyncImage(
+                url: URL(string: newsPost.urlToImage),
+                content : { image in
+                    image.resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 100, height: 80)
+                        .clipped()
+                },
+                placeholder: {
+                    ProgressView()
+                        .frame(width: 100, height: 80)
+                }
+            )
+            .cornerRadius(10)
+                        
+            VStack(alignment: .leading, spacing: 5) {
+                Text(newsPost.title)
+                    .lineLimit(2)
+                    .font(.headline)
+                
+                Text(newsPost.publishedAt)
+                    .font(.caption)
+                    .foregroundColor(.gray)
+                
+            }
+        }
     }
 }
 

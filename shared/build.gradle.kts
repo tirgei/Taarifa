@@ -9,6 +9,7 @@ plugins {
     id(Plugins.BuildKonfig.buildKonfig)
     id(Plugins.SqlDelight.sqlDelight)
     id(Plugins.KMPNativeCoroutines.nativeCoroutines)
+    id(Plugins.KSP.ksp)
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)

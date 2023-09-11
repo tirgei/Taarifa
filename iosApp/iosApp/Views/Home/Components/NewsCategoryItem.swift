@@ -28,7 +28,7 @@ struct NewsCategoryItem: View {
                     .frame(width: 20, height: 2)
             }
         }
-        .padding()
+        .padding(5)
     }
 }
 

@@ -2,14 +2,14 @@ package com.tirgei.taarifa.ui.details
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tirgei.taarifa.domain.respositories.INewsRepository
+import com.tirgei.taarifa.data.repositories.NewsRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class DetailsViewModel constructor(
-    private val newsRepository: INewsRepository
+    private val newsRepository: NewsRepository
 ): ViewModel() {
 
     private val mutableDetailsScreenState = MutableStateFlow(DetailsScreenState())

@@ -7,7 +7,6 @@ import com.tirgei.taarifa.data.local.NewsCache
 import com.tirgei.taarifa.data.network.ApiService
 import com.tirgei.taarifa.data.repositories.NewsRepository
 import com.tirgei.taarifa.database.TaarifaDatabase
-import com.tirgei.taarifa.domain.respositories.INewsRepository
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.defaultRequest
@@ -48,7 +47,7 @@ val sharedModule = module {
     single { NewsCache(get(), get()) }
 
     // Repositories
-    single<INewsRepository> { NewsRepository(get(), get(), get()) }
+    single { NewsRepository(get(), get(), get()) }
 
 }
 

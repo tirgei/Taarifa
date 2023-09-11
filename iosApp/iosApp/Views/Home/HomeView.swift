@@ -7,27 +7,28 @@ struct HomeView: View {
 
 	var body: some View {
         NavigationView {
-            VStack {
-                ZStack(alignment: .center) {
-                    if (viewModel.isLoading) {
-                        ProgressView()
-                    } else {
-                        VStack {
-                            CategoriesList()
-                                .environmentObject(viewModel)
-                        }
+            ZStack() {
+                if (viewModel.isLoading) {
+                    ProgressView()
+                } else {
+                    VStack {
+                        CategoriesList()
+                            .environmentObject(viewModel)
+                        
+                        NewsList()
+                            .environmentObject(viewModel)
                     }
                 }
             }
             .navigationTitle("Taarifa")
             .toolbar {
-                Image(systemName: "search")
+                Image(systemName: "magnifyingglass")
                     .padding()
             }
         }
         .task {
             await viewModel.fetchNewsCategories()
-//            await viewModel.fetchNewsPosts()
+            await viewModel.fetchNewsPosts()
         }
 	}
 }
@@ -38,8 +39,8 @@ struct CategoriesList: View {
     @State var selectedCategory = 1
     
     var body: some View {
-        ScrollView {
-            HStack(alignment: .center) {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
                 ForEach(
                     Array(viewModel.newsCategories.enumerated()),
                     id: \.element
@@ -49,6 +50,7 @@ struct CategoriesList: View {
                     }
                 }
             }
+            .padding(.horizontal, 10)
         }
     }
 }
@@ -59,8 +61,8 @@ struct NewsList: View {
     
     var body: some View {
         ScrollView {
-            HStack {
-                ForEach(viewModel.newsPosts, id: \.publishedAt) { news in
+            LazyVStack(alignment: .leading, spacing: 0) {
+                ForEach(viewModel.newsPosts, id: \.self) { news in
                     NewsPostItem(newsPost: news)
                         .padding()
                 }

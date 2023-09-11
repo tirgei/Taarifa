@@ -4,6 +4,7 @@ object Plugins {
         val gradle = "8.1.1"
         val kotlin = "1.9.10"
         val kmpNativeCoroutines = "1.0.0-ALPHA-18"
+        val ksp = "1.9.10-1.0.13"
     }
 
     object Android {
@@ -35,5 +36,9 @@ object Plugins {
 
     object KMPNativeCoroutines {
         val nativeCoroutines = "com.rickclephas.kmp.nativecoroutines"
+    }
+
+    object KSP {
+        val ksp = "com.google.devtools.ksp"
     }
 }
