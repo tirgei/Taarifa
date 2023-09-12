@@ -1,20 +1,20 @@
 # Taarifa
 
-A [KMP](https://kotlinlang.org/docs/multiplatform.html) news app based on (News API)(https://newsapi.org/docs/endpoints/top-headlines) that displays trending news.
+A [KMP](https://kotlinlang.org/docs/multiplatform.html) news app based on [News API](https://newsapi.org/docs/endpoints/top-headlines) that displays trending news.
 The app runs on:
 - iOS (SwiftUI)
 - Android (Jetpack Compose)
 
 ## Core Libraries
-- (Kotlin MultiPlatform)[https://kotlinlang.org/docs/multiplatform.html]
-- (Jetpack Compose)[https://developer.android.com/jetpack/compose]
-- (Swift UI)[https://developer.apple.com/xcode/swiftui/]
-- (Coroutines)[https://kotlinlang.org/docs/coroutines-overview.html]
-- (Koin)[https://insert-koin.io/]
-- (SQLDelight)[https://github.com/cashapp/sqldelight]
-- (Ktor)[https://ktor.io/]
-- (Build Konfig)[https://github.com/yshrsmz/BuildKonfig]
-- (KMP-NativeCoroutines)[https://github.com/rickclephas/KMP-NativeCoroutines]
+- [Kotlin MultiPlatform](https://kotlinlang.org/docs/multiplatform.html)
+- [Jetpack Compose](https://developer.android.com/jetpack/compose)
+- [Swift UI](https://developer.apple.com/xcode/swiftui/)
+- [Coroutines](https://kotlinlang.org/docs/coroutines-overview.html)
+- [Koin](https://insert-koin.io/)
+- [SQLDelight](https://github.com/cashapp/sqldelight)
+- [Ktor](https://ktor.io/)
+- [Build Konfig](https://github.com/yshrsmz/BuildKonfig)
+- [KMP-NativeCoroutines](https://github.com/rickclephas/KMP-NativeCoroutines)
 
 ## Building & Running
 - Clone this repository
