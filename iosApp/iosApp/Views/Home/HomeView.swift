@@ -23,7 +23,6 @@ struct HomeView: View {
             .navigationTitle("Taarifa")
             .toolbar {
                 Image(systemName: "magnifyingglass")
-                    .padding()
             }
         }
         .task {
@@ -63,8 +62,11 @@ struct NewsList: View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 0) {
                 ForEach(viewModel.newsPosts, id: \.self) { news in
-                    NewsPostItem(newsPost: news)
-                        .padding()
+                    NavigationLink(destination: NewsDetailsView(newsPostId: news.title)) {
+                        NewsPostItem(newsPost: news)
+                            .padding()
+                    }
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
         }
