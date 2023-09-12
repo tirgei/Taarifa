@@ -32,17 +32,26 @@ NEWS_API_KEY=<YOUR_NEWS_API_KEY>
 
 ## ScreenShots
 
-|** News List ** |
-|---------|---------|
-| ** iOS ** | ** Android ** |
-|-----------|---------------|
-|<img src="art/ios_light_home.png" width="300"> | <img src="art/ios_dark_home.png" width="300"> |<img src="art/android_light_home.png" width="300"> | <img src="art/android_dark_home.png" width="300"> |
+### Light Theme
+
+| ** iOS Home **                                 | ** Android Home **                                 |
+|------------------------------------------------|----------------------------------------------------|
+| <img src="art/ios_light_home.png" width="300"> | <img src="art/android_light_home.png" width="300"> |
 
 
+| ** iOS Details **                                 | ** Android Details **                                 |
+|---------------------------------------------------|-------------------------------------------------------|
+| <img src="art/ios_light_details.png" width="300"> | <img src="art/android_light_details.png" width="300"> |
 
-|** News Details ** |
-|---------|---------|
-| ** iOS ** | ** Android ** |
-|-----------|---------------|
-|<img src="art/ios_light_details.png" width="300"> | <img src="art/ios_dark_details.png" width="300"> |<img src="art/android_light_details.png" width="300"> | <img src="art/android_dark_details.png" width="300"> |
+
+### Dark Theme
+
+| ** iOS Home **                                | ** Android Home **                                |
+|-----------------------------------------------|---------------------------------------------------|
+| <img src="art/ios_dark_home.png" width="300"> | <img src="art/android_dark_home.png" width="300"> |
+
+
+| ** iOS Details **                                | ** Android Details **                                |
+|--------------------------------------------------|------------------------------------------------------|
+| <img src="art/ios_dark_details.png" width="300"> | <img src="art/android_dark_details.png" width="300"> |
 
