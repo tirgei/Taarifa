@@ -34,24 +34,25 @@ NEWS_API_KEY=<YOUR_NEWS_API_KEY>
 
 ### Light Theme
 
-| ** iOS Home **                                 | ** Android Home **                                 |
-|------------------------------------------------|----------------------------------------------------|
-| <img src="art/ios_light_home.png" width="300"> | <img src="art/android_light_home.png" width="300"> |
+| **iOS Home**                                   | **iOS Details**                                  |
+|------------------------------------------------|--------------------------------------------------|
+| <img src="art/ios_light_home.png" width="300"> | <img src="art/ios_light_details.png" width="300"> |
 
 
-| ** iOS Details **                                 | ** Android Details **                                 |
-|---------------------------------------------------|-------------------------------------------------------|
-| <img src="art/ios_light_details.png" width="300"> | <img src="art/android_light_details.png" width="300"> |
+| **Android Home**                                   | **Android Details**                                 |
+|----------------------------------------------------|-----------------------------------------------------|
+| <img src="art/android_light_home.png" width="300"> | <img src="art/android_light_details.png" width="300"> |
 
 
 ### Dark Theme
 
-| ** iOS Home **                                | ** Android Home **                                |
-|-----------------------------------------------|---------------------------------------------------|
-| <img src="art/ios_dark_home.png" width="300"> | <img src="art/android_dark_home.png" width="300"> |
+| **iOS Home**                                  | **iOS Details**                                  |
+|-----------------------------------------------|--------------------------------------------------|
+| <img src="art/ios_dark_home.png" width="300"> | <img src="art/ios_dark_details.png" width="300"> |
 
 
-| ** iOS Details **                                | ** Android Details **                                |
-|--------------------------------------------------|------------------------------------------------------|
-| <img src="art/ios_dark_details.png" width="300"> | <img src="art/android_dark_details.png" width="300"> |
+| **Android Home**                                  | **Android Details**                                  |
+|---------------------------------------------------|------------------------------------------------------|
+| <img src="art/android_dark_home.png" width="300"> | <img src="art/android_dark_details.png" width="300"> |
+
 
