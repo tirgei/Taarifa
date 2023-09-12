@@ -94,6 +94,8 @@ struct AuthorDetails: View {
                 .scaledToFit()
                 .padding()
                 .frame(width: 60, height: 60)
+                .background(Color.scheme.tertiary)
+                .foregroundColor(Color.scheme.onTertiary)
                 .cornerRadius(10)
             
             VStack(alignment: .leading) {
