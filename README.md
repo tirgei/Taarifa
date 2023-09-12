@@ -34,13 +34,13 @@ NEWS_API_KEY=<YOUR_NEWS_API_KEY>
 
 ### Light Theme
 
-| **iOS Home**                                   | **iOS Details**                                  |
-|------------------------------------------------|--------------------------------------------------|
+| **iOS Home**                                   | **iOS Details**                                   |
+|------------------------------------------------|---------------------------------------------------|
 | <img src="art/ios_light_home.png" width="300"> | <img src="art/ios_light_details.png" width="300"> |
 
 
-| **Android Home**                                   | **Android Details**                                 |
-|----------------------------------------------------|-----------------------------------------------------|
+| **Android Home**                                   | **Android Details**                                   |
+|----------------------------------------------------|-------------------------------------------------------|
 | <img src="art/android_light_home.png" width="300"> | <img src="art/android_light_details.png" width="300"> |
 
 
