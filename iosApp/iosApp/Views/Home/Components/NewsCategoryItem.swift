@@ -19,12 +19,12 @@ struct NewsCategoryItem: View {
         } label: {
             VStack(alignment: .center) {
                 Text(title)
-                    .foregroundColor(isSelected ? .black : .gray.opacity(0.8))
+                    .foregroundColor(isSelected ? Color.scheme.onBackground : .gray.opacity(0.8))
                     .font(.body)
                     .fontWeight(isSelected ? .bold : .medium)
                 
                 Rectangle()
-                    .fill(isSelected ? .blue : .white)
+                    .fill(isSelected ? Color.scheme.secondary : Color.scheme.background)
                     .frame(width: 20, height: 2)
             }
         }
